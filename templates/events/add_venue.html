@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} Add a venue
+{% endblock %}
+
+{% block content %}
+    Add/Change a venue
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_ul }}
+        <li>
+            <button type="submit">Send</button>
+        </li>
+    </form>
+{% endblock %}
