@@ -1,6 +1,7 @@
 from datetime import date
 import calendar
 from calendar import HTMLCalendar
+import csv
 
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -38,3 +39,26 @@ def add_venue(request, id):
         form.save()
         return redirect(event.get_absolute_url())
     return render(request, 'events/add_venue.html', {'form': form})
+
+
+def get_text(request):
+    response = HttpResponse(content_type='text/plain')
+    response['Content-Disposition'] = 'attachment; filename="bart.txt"'
+    lines = [
+        'I will not expose the ignorance of the faculty\n',
+        'will not conduct my own fire drills\n',
+        'I will not prescribe medication\n',
+    ]
+    response.writelines(lines)
+    return response
+
+
+def gen_csv(request):
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="venues.csv"'
+    writer = csv.writer(response)
+    venues = Venue.objects.all()
+    writer.writerow(['Venue Name', 'Address'])
+    for venue in venues:
+        writer.writerow([venue.name, venue.address])
+    return response

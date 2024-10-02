@@ -15,6 +15,12 @@
         <li>
             <a href="{% url 'events:all_events' %}">all events</a>
         </li>
+        <li>
+            <a href="{% url 'events:generate_text_file' %}">Generate text file</a>
+        </li>
+        <li>
+            <a href="{% url 'events:generate_csv' %}">Generate csv file</a>
+        </li>
     </ul>
 </nav>
 {% block content %}
