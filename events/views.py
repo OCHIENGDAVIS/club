@@ -2,10 +2,17 @@ from datetime import date
 import calendar
 from calendar import HTMLCalendar
 import csv
+import io
+
+from reportlab.pdfgen import canvas
+from reportlab.lib.units import inch
+from reportlab.lib.pagesizes import letter
 
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
+from django.http import FileResponse
+from django.core.paginator import Paginator
 
 from .models import Event, Venue
 from .forms import VenueForm
@@ -23,7 +30,10 @@ def index(request, year=date.today().year, month=date.today().month):
 
 
 def all_events(request):
-    events = Event.objects.all()
+    page = request.GET.get('page', 1)
+    events = Event.objects.all().order_by('-event_date')
+    paginator = Paginator(events, 2)
+    events = paginator.get_page(int(page))
     return render(request, 'events/list.html', {'events': events})
 
 
@@ -62,3 +72,23 @@ def gen_csv(request):
     for venue in venues:
         writer.writerow([venue.name, venue.address])
     return response
+
+
+def gen_pdf(request):
+    buf = io.BytesIO()
+    c = canvas.Canvas(buf, pagesize=letter, bottomup=0)
+    textob = c.beginText()
+    textob.setTextOrigin(inch, inch)
+    textob.setFont('Helvetica-Oblique', 14)
+    lines = [
+        'I will not expose the ignorance of the faculty',
+        'I will not conduct my own fire drills',
+        'I will not prescribe medication'
+    ]
+    for line in lines:
+        textob.textLine(line)
+    c.drawText(textob)
+    c.showPage()
+    c.save()
+    buf.seek(0)
+    return FileResponse(buf, as_attachment=True, filename='bart.pdf')

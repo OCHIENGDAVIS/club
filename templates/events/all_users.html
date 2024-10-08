@@ -1,0 +1,10 @@
+<div>
+    <ol>
+        {% for user in users %}
+            <li>{{ user.username }}</li>
+        {% empty %}
+            <p>No users to display</p>
+        {% endfor %}
+
+    </ol>
+</div>
