@@ -13,6 +13,8 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django.http import FileResponse
 from django.core.paginator import Paginator
+from django.template import RequestContext, Template
+from django.http import HttpResponse
 
 from .models import Event, Venue
 from .forms import VenueForm
@@ -92,3 +94,13 @@ def gen_pdf(request):
     c.save()
     buf.seek(0)
     return FileResponse(buf, as_attachment=True, filename='bart.pdf')
+
+
+def context_demo(request):
+    template = Template('{{ user }} <br>  {{ perms }} <br> {{ request }} <br> {{ messages }}')
+    context = RequestContext(request)
+    return HttpResponse(template.render(context))
+
+
+def custom_context_processor(request):
+    return {'name': 'davis', 'something': 'something'}

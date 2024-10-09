@@ -12,5 +12,6 @@ urlpatterns = [
     path('event/gentext/', views.get_text, name='generate_text_file'),
     path('event/gencsv', views.gen_csv, name='generate_csv'),
     path('event/genpdf', views.gen_pdf, name='generate_pdf'),
+    path('event/context-demo/', views.context_demo, name='context_demo'),
 
 ]
