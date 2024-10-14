@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %} CBV Contact US  {% endblock %}
+{% block content %}
+    <h1>CBV Contact US</h1>
+    <h2>{{ name }}</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p>
+            <input type="submit" value="Send"/>
+        </p>
+    </form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %} Delete {{ event }} {% endblock %}
+
+{% block content %}
+    <p>Deleting {{ event.event_name }}</p>
+    <p>Are you sure?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="submit" value="delete"/>
+        <a href="{% url 'cbv:detail' event.id %}">Cancel</a>
+    </form>
+
+{% endblock %}

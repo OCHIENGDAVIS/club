@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} class bases view index {% endblock %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+
+    <p>This is from the class based view </p>
+    <ul>
+        {% for event in events %}
+            <li>
+                <a href="{{ event.get_absolute_url }}">{{ event.event_name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
