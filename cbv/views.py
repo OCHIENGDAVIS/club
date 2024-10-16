@@ -4,6 +4,7 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from club.contact import ContactForm
 
@@ -20,19 +21,19 @@ class TemplateViewDemo(TemplateView):
         return context
 
 
-class EventListView(ListView):
+class EventListView(LoginRequiredMixin, ListView):
     model = Event
     template_name = 'cbv/index.html'
     context_object_name = 'events'
 
 
-class EventDetail(DetailView):
+class EventDetail(LoginRequiredMixin, DetailView):
     model = Event
     template_name = 'cbv/detail.html'
     context_object_name = 'event'
 
 
-class EventCreateView(CreateView):
+class EventCreateView(LoginRequiredMixin, CreateView):
     model = Event
     form_class = EventForm
     template_name = 'cbv/create.html'
@@ -42,7 +43,7 @@ class EventCreateView(CreateView):
         return success_url
 
 
-class EventEditView(UpdateView):
+class EventEditView(LoginRequiredMixin, UpdateView):
     model = Event
     form_class = EventForm
     template_name = 'cbv/update.html'
@@ -52,7 +53,7 @@ class EventEditView(UpdateView):
         return success_url
 
 
-class EventDeleteView(DeleteView):
+class EventDeleteView(LoginRequiredMixin, DeleteView):
     model = Event
     success_url = reverse_lazy('cbv:list')
     template_name = 'cbv/delete_confirm.html'

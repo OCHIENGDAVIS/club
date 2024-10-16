@@ -9,27 +9,54 @@
 <body>
 <nav>
     <ul>
+
         <li>
             <a href="{% url 'events:index' %}">Home</a>
         </li>
-        <li>
-            <a href="{% url 'events:all_events' %}">all events</a>
-        </li>
-        <li>
-            <a href="{% url 'events:generate_text_file' %}">Generate text file</a>
-        </li>
-        <li>
-            <a href="{% url 'events:generate_csv' %}">Generate csv file</a>
-        </li>
-        <li>
-            <a href="{% url 'events:generate_pdf' %}">Generate pdf file</a>
-        </li>
+        {% if request.user.is_authenticated %}
+            <li>
+                <a href="{% url 'events:all_events' %}">all events</a>
+            </li>
+            <li>
+                <a href="{% url 'events:generate_text_file' %}">Generate text file</a>
+            </li>
+            <li>
+                <a href="{% url 'events:generate_csv' %}">Generate csv file</a>
+            </li>
+            <li>
+                <a href="{% url 'events:generate_pdf' %}">Generate pdf file</a>
+            </li>
+            <li>
+                <a href="{% url 'cbv:list' %}">Class Based Views</a>
+            </li>
+            <li>
+                <form action="{% url 'logout' %}" method="POST">
+                    {% csrf_token %}
+                    {{ form.asp }}
+                    <p>
+                        <input type="submit" value="Logout">
+                    </p>
+                </form>
+
+            </li>
+        {% else %}
+            <li>
+                <a href="{% url 'login' %}">Login</a>
+            </li>
+            <li>
+                <a href="{% url 'accounts:register' %}">Register</a>
+            </li>
+            <li>
+                <a href="{% url 'events:all_events' %}">All events</a>
+            </li>
+        {% endif %}
     </ul>
-    <ul>
-        <li>
-            <a href="{% url 'cbv:list' %}">Class Based Views</a>
-        </li>
-    </ul>
+    {% if request.user.is_authenticated %}
+        <h1>Welcome, {{ request.user.username }}</h1>
+    {% else %}
+        <h1>You are not logged in, please <small><a href="{% url 'login' %}">login</a></small></h1>
+    {% endif %}
+
 </nav>
 {% block content %}
 

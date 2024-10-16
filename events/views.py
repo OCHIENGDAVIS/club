@@ -15,6 +15,7 @@ from django.http import FileResponse
 from django.core.paginator import Paginator
 from django.template import RequestContext, Template
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
 from .models import Event, Venue
 from .forms import VenueForm
@@ -44,6 +45,7 @@ def event_detail(request, id):
     return render(request, 'events/detail.html', {'event': event})
 
 
+@login_required()
 def add_venue(request, id):
     event = get_object_or_404(Event, id=id)
     form = VenueForm(request.POST or None, instance=event.venue)
