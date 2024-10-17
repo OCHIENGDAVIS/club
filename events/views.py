@@ -19,9 +19,13 @@ from django.contrib.auth.decorators import login_required
 from django.forms import formset_factory
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.core.mail import send_mail, get_connection
+from django.contrib import messages
+
+from formtools.wizard.views import SessionWizardView
 
 from .models import Event, Venue
-from .forms import VenueForm, CommitteeForm
+from .forms import VenueForm, CommitteeForm, SurveyForm1, SurveyForm2
 
 
 def index(request, year=date.today().year, month=date.today().month):
@@ -123,3 +127,24 @@ def committee_formset(request):
     else:
         formset = committee_set()
         return render(request, 'events/committee.html', {'formset': formset})
+
+
+class SurveyWizard(SessionWizardView):
+    template_name = 'events/survey.html'
+    form_list = [SurveyForm1, SurveyForm2]
+
+    def done(self, form_list, **kwargs):
+        responses = [form.cleaned_data for form in form_list]
+        mail_body = ''
+        for response in responses:
+            for k, v in response.items():
+                mail_body += f'{k}: {v}'
+        # con = get_connection('django.core.mail.backends.console.EmailBackend')
+        send_mail(
+            'survey Submission',
+            mail_body,
+            'noreply@club.com',
+            ['siteowner@club.com'],
+        )
+        messages.add_message(self.request, messages.SUCCESS, 'Your survey was submitted!')
+        return HttpResponseRedirect(reverse('events:survey'))

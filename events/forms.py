@@ -39,3 +39,13 @@ class CommitteeForm(forms.Form):
     first_name = forms.CharField(max_length=120)
     last_name = forms.CharField(max_length=120)
     phone = forms.CharField(max_length=120)
+
+
+class SurveyForm1(forms.Form):
+    name = forms.CharField(max_length=120)
+    email = forms.EmailField()
+
+
+class SurveyForm2(forms.Form):
+    response1 = forms.CharField(label='What is great about our club?', widget=forms.Textarea)
+    response2 = forms.CharField(label='What is not so great about our club?', widget=forms.Textarea)
