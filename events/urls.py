@@ -13,5 +13,6 @@ urlpatterns = [
     path('event/gencsv', views.gen_csv, name='generate_csv'),
     path('event/genpdf', views.gen_pdf, name='generate_pdf'),
     path('event/context-demo/', views.context_demo, name='context_demo'),
+    path('event/committee/', views.committee_formset, name='committee'),
 
 ]

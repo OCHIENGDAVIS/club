@@ -33,3 +33,9 @@ class ContactForm(forms.Form):
     email = forms.CharField(max_length=120)
     name = forms.CharField(max_length=120),
     comment = forms.CharField(widget=forms.Textarea)
+
+
+class CommitteeForm(forms.Form):
+    first_name = forms.CharField(max_length=120)
+    last_name = forms.CharField(max_length=120)
+    phone = forms.CharField(max_length=120)

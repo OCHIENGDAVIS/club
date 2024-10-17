@@ -16,9 +16,12 @@ from django.core.paginator import Paginator
 from django.template import RequestContext, Template
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.forms import formset_factory
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 from .models import Event, Venue
-from .forms import VenueForm
+from .forms import VenueForm, CommitteeForm
 
 
 def index(request, year=date.today().year, month=date.today().month):
@@ -106,3 +109,17 @@ def context_demo(request):
 
 def custom_context_processor(request):
     return {'name': 'davis', 'something': 'something'}
+
+
+def committee_formset(request):
+    committee_set = formset_factory(CommitteeForm, extra=3)
+    if request.method == 'POST':
+        formset = committee_set(request.POST)
+        if formset.is_valid():
+            data = formset.cleaned_data
+            # this data is a list of dictionaries each representing one form
+            print(data)
+            return HttpResponseRedirect(reverse('events:committee'))
+    else:
+        formset = committee_set()
+        return render(request, 'events/committee.html', {'formset': formset})
