@@ -12,6 +12,7 @@ urlpatterns = [
     path('contact-us/', contact, name='contact_us'),
     path('accounts/', include('accounts.urls', namespace='accounts')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path("__reload__/", include("django_browser_reload.urls")),
 
 ]
 

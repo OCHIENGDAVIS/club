@@ -1,66 +1,88 @@
-{% load static %}
+{% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title> MyClub | {% block title %} {% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% tailwind_css %}
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<nav>
-    <ul>
+<body class="bg-gray-200">
+<div class="max-w-6xl mx-auto px-4">
 
-        <li>
-            <a href="{% url 'events:index' %}">Home</a>
-        </li>
+    <nav class="px-8  bg-white">
+        <ul class="flex justify-between py-4">
+
+            <li class=" ">
+                <a class="font-bold font-black text-lg hover:text-red-500 active:text-red-500"
+                   href="{% url 'events:index' %}">Home</a>
+            </li>
+            {% if request.user.is_authenticated %}
+                <li>
+                    <a class="font-bold font-black text-lg hover:text-red-500" href="{% url 'events:all_events' %}">all
+                        events</a>
+                </li>
+                <li>
+                    <a class="font-bold font-black text-lg hover:text-red-500"
+                       href="{% url 'events:generate_text_file' %}">Generate
+                        text file</a>
+                </li>
+                <li>
+                    <a class="font-bold font-black text-lg hover:text-red-500" href="{% url 'events:generate_csv' %}">Generate
+                        csv file</a>
+                </li>
+                <li>
+                    <a class="font-bold font-black text-lg hover:text-red-500" href="{% url 'events:generate_pdf' %}">Generate
+                        pdf file</a>
+                </li>
+                <li>
+                    <a class="font-bold font-black text-lg hover:text-red-500" href="{% url 'cbv:list' %}">Class Based
+                        Views</a>
+                </li>
+                <li>
+                    <form action="{% url 'logout' %}" method="POST">
+                        {% csrf_token %}
+                        {{ form.asp }}
+                        <p>
+                            <input class="font-bold  text-lg text-red-500 hover:cursor-pointer hover:text-black"
+                                   type="submit"
+                                   value="Logout">
+                        </p>
+                    </form>
+
+                </li>
+            {% else %}
+
+                <li>
+                    <a class="font-bold font-black text-lg hover:text-red-500" href="{% url 'events:all_events' %}">All
+                        events</a>
+                </li>
+                <li>
+                    <a class="font-bold  text-lg text-red-500 hover:cursor-pointer hover:text-black"
+                       href="{% url 'login' %}">Login</a>
+                </li>
+                <li>
+                    <a class="font-bold  text-lg text-red-500 hover:cursor-pointer hover:text-black"
+                       href="{% url 'accounts:register' %}">Register</a>
+                </li>
+            {% endif %}
+        </ul>
         {% if request.user.is_authenticated %}
-            <li>
-                <a href="{% url 'events:all_events' %}">all events</a>
-            </li>
-            <li>
-                <a href="{% url 'events:generate_text_file' %}">Generate text file</a>
-            </li>
-            <li>
-                <a href="{% url 'events:generate_csv' %}">Generate csv file</a>
-            </li>
-            <li>
-                <a href="{% url 'events:generate_pdf' %}">Generate pdf file</a>
-            </li>
-            <li>
-                <a href="{% url 'cbv:list' %}">Class Based Views</a>
-            </li>
-            <li>
-                <form action="{% url 'logout' %}" method="POST">
-                    {% csrf_token %}
-                    {{ form.asp }}
-                    <p>
-                        <input type="submit" value="Logout">
-                    </p>
-                </form>
-
-            </li>
+            <h1 class="text-4xl text-red-500 font-bold ">Welcome, {{ request.user.username }}</h1>
         {% else %}
-            <li>
-                <a href="{% url 'login' %}">Login</a>
-            </li>
-            <li>
-                <a href="{% url 'accounts:register' %}">Register</a>
-            </li>
-            <li>
-                <a href="{% url 'events:all_events' %}">All events</a>
-            </li>
+            <h1 class="text-md mb-4 text-black-500 font-bold py-3 ">You are not logged in, please <small><a
+                    class="text-red-500" href="{% url 'login' %}">Login</a></small> OR <small><a class="text-red-500"
+                                                                                                 href="{% url 'accounts:register' %}">Register</a></small>
+            </h1>
         {% endif %}
-    </ul>
-    {% if request.user.is_authenticated %}
-        <h1>Welcome, {{ request.user.username }}</h1>
-    {% else %}
-        <h1>You are not logged in, please <small><a href="{% url 'login' %}">login</a></small></h1>
-    {% endif %}
 
-</nav>
-{% block content %}
+    </nav>
+    <div class="px-8">
+        {% block content %}
 
-{% endblock %}
+        {% endblock %}
+    </div>
 
 </body>
+</div>
 </html>

@@ -1,16 +1,52 @@
 {% extends 'base.html' %}
+{% load form_filters %}
 {% block title %}
 {% endblock %}
 {% block content %}
-    <h1>Register </h1>
     <form method="POST">
+        {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+                <p class="text-red-500">{{ error }}</p>
+            {% endfor %}
+        {% endif %}
         {% csrf_token %}
-        {{ form.as_p }}
+        <div class="mb-2">
+            <p class="font-bold">Username: </p>
+            <div>
+                {% if form.username.errors %}
+                    {% for error in form.username.errors %}
+                        <p class="text-red-500">{{ error }}</p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            {{ form.username|add_class:'py-0.5 w-1/2 rounded border border-gray-800 focus:border-gray-800 outline-0 ring-0 focus:outiline-0 focus:ring-0' }}
+        </div>
+        <div class="mb-2">
+            <p class="font-bold">Password: </p>
+            <div>
+                {% if form.password1.errors %}
+                    {% for error in form.password1.errors %}
+                        <p class="text-red-500">{{ error }}</p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <p>{{ form.password1|add_class:'py-0.5 w-1/2 rounded outline-0 ring-0 border border-gray-800 focus:border-gray-800 focus:outiline-0 focus:ring-0 ' }}</p>
+        </div>
+        <div class="mb-4">
+            <p class="font-bold">Confirm Password: </p>
+            <div>
+                {% if form.password2.errors %}
+                    {% for error in form.password2.errors %}
+                        <p class="text-red-500">{{ error }}</p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <p>{{ form.password2|add_class:'py-0.5 w-1/2 rounded outline-0 ring-0 border border-gray-800 focus:border-gray-800 focus:outiline-0 focus:ring-0' }}</p>
+        </div>
+
         <p>
-            <input type="submit" value="Register"/>
+            <input class="font-bold text-white px-4 py-1  text-lg bg-red-500 rounded hover:cursor-pointer hover:bg-red-700"
+                   type="submit" value="Register"/>
         </p>
     </form>
-    {% if form.errors %}
-        {{ form.errors }}
-    {% endif %}
 {% endblock %}

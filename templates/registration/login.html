@@ -1,20 +1,40 @@
 {% extends 'base.html' %}
+{% load form_filters %}
 {% block title %} Login {% endblock %}
 {% block content %}
-    <h1>Login </h1>
     <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
+        {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+                <p class="text-red-500">{{ error }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <div class="py-4">
+            <p class="font-bold">Username:</p>
+            <p class="font-bold text-sm "> {{ form.username|add_class:'py-0.5 w-1/2 rounded outline-0 ring-0 border border-gray-800 focus:border-gray-800 focus:outiline-0 focus:ring-0' }}</p>
+        </div>
+        <div>
+            <p class="font-bold text-lg">Password:</p>
+            <p class="font-bold">{{ form.password|add_class:'py-0.5 w-1/2 rounded outline-0 ring-0 border border-gray-800 focus:border-gray-800 focus:outiline-0 focus:ring-0' }}</p>
+        </div>
+
+        <p class="pt-8">
+            <button class="font-bold text-white px-4 py-1 rounded  text-lg bg-red-500 hover:cursor-pointer hover:bg-red-700"
+                    type="submit">
+                Login
+            </button>
+        </p>
     </form>
     <p>
         <small>
-            Don't have an account <span><a href="{% url 'accounts:register' %}">Register</a></span>
+            Don't have an account <span><a class="text-red-500" href="{% url 'accounts:register' %}">Register</a></span>
         </small>
     </p>
     <p>
         <small>
-            Forgot Your password? <span><a href="{% url 'password_reset' %}">Reset Password</a></span>
+            Forgot Your password? <span><a class="text-red-500"
+                                           href="{% url 'password_reset' %}">Reset Password</a></span>
         </small>
     </p>
 {% endblock %}

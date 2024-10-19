@@ -1,0 +1,1033 @@
+[
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2024-09-21T08:10:01.725Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "2",
+        "object_repr": "bob",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2024-09-21T08:11:33.440Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "Max's Bar",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2024-09-21T08:12:11.877Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "Church",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2024-09-21T08:12:38.683Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "3",
+        "object_repr": "Union  Stadium",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2024-09-21T08:13:31.396Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "Bob's birthday",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2024-09-21T08:14:09.089Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "2",
+        "object_repr": "Xmass Barbeque",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2024-09-21T08:16:58.810Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "Bob's birthday",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Manager\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2024-09-21T08:17:04.830Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "2",
+        "object_repr": "Xmass Barbeque",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Manager\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2024-09-22T02:59:26.803Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "3",
+        "object_repr": "Chrises' Birthday",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2024-09-22T03:00:08.870Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "4",
+        "object_repr": "Watching of football finals",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2024-09-22T03:01:52.395Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "5",
+        "object_repr": "End year Celebrations",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 4,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 4,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 4,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 4,
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 5,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 5,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 5,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 5,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 6,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 6,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 6,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 6,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add club user",
+        "content_type": 7,
+        "codename": "add_clubuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change club user",
+        "content_type": 7,
+        "codename": "change_clubuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete club user",
+        "content_type": 7,
+        "codename": "delete_clubuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view club user",
+        "content_type": 7,
+        "codename": "view_clubuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add venue",
+        "content_type": 8,
+        "codename": "add_venue"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change venue",
+        "content_type": 8,
+        "codename": "change_venue"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete venue",
+        "content_type": 8,
+        "codename": "delete_venue"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view venue",
+        "content_type": 8,
+        "codename": "view_venue"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add event",
+        "content_type": 9,
+        "codename": "add_event"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change event",
+        "content_type": 9,
+        "codename": "change_event"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete event",
+        "content_type": 9,
+        "codename": "delete_event"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view event",
+        "content_type": 9,
+        "codename": "view_event"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add subscriber",
+        "content_type": 10,
+        "codename": "add_subscriber"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change subscriber",
+        "content_type": 10,
+        "codename": "change_subscriber"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete subscriber",
+        "content_type": 10,
+        "codename": "delete_subscriber"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view subscriber",
+        "content_type": 10,
+        "codename": "view_subscriber"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add my club subscriber",
+        "content_type": 10,
+        "codename": "add_myclubsubscriber"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change my club subscriber",
+        "content_type": 10,
+        "codename": "change_myclubsubscriber"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete my club subscriber",
+        "content_type": 10,
+        "codename": "delete_myclubsubscriber"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view my club subscriber",
+        "content_type": 10,
+        "codename": "view_myclubsubscriber"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$fI9wKtzfpGDrOMrozwGICi$3E5yEkxjWjNGscpri4QYKRjBszBxAmBdRlX653yvYTs=",
+        "last_login": "2024-10-16T04:24:29.265Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "admin@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-09-21T07:58:15.347Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$MEhGhERFlfuU0QxlFYNsYl$EqTIZAEnwUzivtchGKLq6piNjKEyFPhmNnpoc55BblU=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "bob",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-09-21T08:10:00.294Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "platenium_1994",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "ochieng",
+        "first_name": "",
+        "last_name": "",
+        "email": "ochieng@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-14T03:23:19.871Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$ccPiLRBD2qUDOnW19QK2lC$N10d4ZOz18bp+05VwreO2aURA8FnVOmR4Zv9a5BOL4s=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "odondi",
+        "first_name": "",
+        "last_name": "",
+        "email": "ondondi@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-14T03:27:42.677Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+        "password": "platenium_1994",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "otila",
+        "first_name": "",
+        "last_name": "",
+        "email": "otti@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-14T03:29:05.444Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 6,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "diana",
+        "first_name": "",
+        "last_name": "",
+        "email": "diana@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-14T03:30:16.572Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$ZXK6sCJc3hQhjhOjdSx0Tq$MwnP5zqhUlMolrodYY5xvy7FmbwJqyqB3PFGjlgmoWU=",
+        "last_login": "2024-10-16T23:00:31.055Z",
+        "is_superuser": false,
+        "username": "ben",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-16T04:27:00.775Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$G8bbv0JKemdZ2GDG2uoxI9$yWvg8I1qGWBsmNmDdPZjpSFodjnwg9MCNnYWiV5gkxI=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "fred",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-16T04:34:46.444Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 9,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$lXuh9f0vLM5hJwZlpGiONO$Klx/nQBYuy46+66rhHDPHcvW87uSTWJulOIro+ilDHg=",
+        "last_login": "2024-10-16T04:56:36.818Z",
+        "is_superuser": false,
+        "username": "salim",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-16T04:55:01.289Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 10,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$CHL6zARv3ggRkUFBWFa6dN$4xlLjJga2p6YSzUMAhvBdaBUDfBkF2CzOAoGrrkhYxE=",
+        "last_login": "2024-10-16T04:57:19.192Z",
+        "is_superuser": false,
+        "username": "peter",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-16T04:57:06.759Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "events",
+        "model": "clubuser"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "events",
+        "model": "venue"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "events",
+        "model": "event"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "cbv",
+        "model": "myclubsubscriber"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "6i3juznegzhwcf2ahgz0rjvj1v1ybcg5",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQBe_iGln-GyjpOYO19u7iALKlOKkQd4dIKaB9M_NeIsG61LQOmtOE4iy0OPxuGcqD2gbwDu3WZeltmacsN0XudMhrR3pedvfvoMKo31qBIYZMaAuic8wFPQdGT2hyKJptgZOx0aDxUaM6qmhBhxCBiYPz4v0BMOI5Gg:1t0BiJ:sHzC7niWnbBxLGg5p5Soz5MzM-_epLXxI3_7aFtdcas",
+        "expire_date": "2024-10-28T03:25:43.464Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "6z5q4sn43zbf2falzvzjf8p0ezxm8xw5",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQBe_iGln-GyjpOYO19u7iALKlOKkQd4dIKaB9M_NeIsG61LQOmtOE4iy0OPxuGcqD2gbwDu3WZeltmacsN0XudMhrR3pedvfvoMKo31qBIYZMaAuic8wFPQdGT2hyKJptgZOx0aDxUaM6qmhBhxCBiYPz4v0BMOI5Gg:1sygY5:znagpPqcmm6R6g21FYXrSDf-wjeCZXmK72ZiS6wubYg",
+        "expire_date": "2024-10-23T23:56:57.002Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "hoxqw101sdf6120sddxnplqm914cj0se",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQBe_iGln-GyjpOYO19u7iALKlOKkQd4dIKaB9M_NeIsG61LQOmtOE4iy0OPxuGcqD2gbwDu3WZeltmacsN0XudMhrR3pedvfvoMKo31qBIYZMaAuic8wFPQdGT2hyKJptgZOx0aDxUaM6qmhBhxCBiYPz4v0BMOI5Gg:1srv17:hlHB5pgiiYYzViD9NdY1qR_eroa7ZcqIWYR3CQxlZNw",
+        "expire_date": "2024-10-05T07:58:57.539Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "txyj293m1jgpfoboptnb933y1wg946nf",
+    "fields": {
+        "session_data": ".eJyrVirPrEosSokvLi0qS62Mh_CUrKqViktSC5SslAyUdMDM-JTEkkSgeC2Um5aZk1oM4adWlBQlwuVrawEZwx6R:1t1aIe:aQFLi324bTkI9T3Likkvu2IY_lxmMo5Dh99jkrS4cjg",
+        "expire_date": "2024-10-31T23:53:00.126Z"
+    }
+},
+{
+    "model": "events.venue",
+    "pk": 1,
+    "fields": {
+        "name": "Max's Bar",
+        "address": "12 East"
+    }
+},
+{
+    "model": "events.venue",
+    "pk": 2,
+    "fields": {
+        "name": "Church",
+        "address": "12 North Road"
+    }
+},
+{
+    "model": "events.venue",
+    "pk": 3,
+    "fields": {
+        "name": "Union  Stadium",
+        "address": "123"
+    }
+},
+{
+    "model": "events.venue",
+    "pk": 4,
+    "fields": {
+        "name": "Church",
+        "address": "12 North Road"
+    }
+},
+{
+    "model": "events.venue",
+    "pk": 5,
+    "fields": {
+        "name": "Church",
+        "address": "12 North Road"
+    }
+},
+{
+    "model": "events.venue",
+    "pk": 6,
+    "fields": {
+        "name": "Church",
+        "address": "12 North Road"
+    }
+},
+{
+    "model": "events.venue",
+    "pk": 7,
+    "fields": {
+        "name": "Church",
+        "address": "12 North Road"
+    }
+},
+{
+    "model": "events.venue",
+    "pk": 8,
+    "fields": {
+        "name": "Church",
+        "address": "12 North Road"
+    }
+},
+{
+    "model": "events.venue",
+    "pk": 9,
+    "fields": {
+        "name": "Church",
+        "address": "12 North Road"
+    }
+},
+{
+    "model": "events.venue",
+    "pk": 10,
+    "fields": {
+        "name": "Church",
+        "address": "12 North Road"
+    }
+},
+{
+    "model": "events.venue",
+    "pk": 11,
+    "fields": {
+        "name": "Church",
+        "address": "12 North Road"
+    }
+},
+{
+    "model": "events.venue",
+    "pk": 12,
+    "fields": {
+        "name": "Church",
+        "address": "12 North Road"
+    }
+},
+{
+    "model": "events.event",
+    "pk": 2,
+    "fields": {
+        "event_name": "Xmass Barbeque",
+        "event_date": "2024-09-21T08:13:52Z",
+        "description": "some grilling for chrissmass",
+        "venue": 1,
+        "manager": [
+            2
+        ]
+    }
+},
+{
+    "model": "events.event",
+    "pk": 3,
+    "fields": {
+        "event_name": "Chrises' Birthday",
+        "event_date": "2024-09-22T02:58:49Z",
+        "description": "Celebration of Chris' birthday",
+        "venue": 1,
+        "manager": [
+            2
+        ]
+    }
+},
+{
+    "model": "events.event",
+    "pk": 4,
+    "fields": {
+        "event_name": "Watching of football finals",
+        "event_date": "2024-09-22T02:59:49Z",
+        "description": "Watching the football finals together",
+        "venue": 1,
+        "manager": [
+            2
+        ]
+    }
+},
+{
+    "model": "events.event",
+    "pk": 5,
+    "fields": {
+        "event_name": "End year Celebrations",
+        "event_date": "2024-12-31T00:00:00Z",
+        "description": "End f the year celebrations",
+        "venue": 1,
+        "manager": [
+            2
+        ]
+    }
+},
+{
+    "model": "events.event",
+    "pk": 6,
+    "fields": {
+        "event_name": "Cloud workers training",
+        "event_date": "2024-10-12T10:30:38.745Z",
+        "description": "This is Chat moderation training.",
+        "venue": 12,
+        "manager": [
+            1
+        ]
+    }
+},
+{
+    "model": "events.event",
+    "pk": 7,
+    "fields": {
+        "event_name": "Emode Trainng",
+        "event_date": "2024-10-12T10:41:22.741Z",
+        "description": "This is an emod training",
+        "venue": 12,
+        "manager": [
+            1
+        ]
+    }
+},
+{
+    "model": "events.event",
+    "pk": 8,
+    "fields": {
+        "event_name": "Another emod",
+        "event_date": "2024-10-12T10:43:13.430Z",
+        "description": "This is another emod training",
+        "venue": 12,
+        "manager": [
+            1
+        ]
+    }
+},
+{
+    "model": "events.event",
+    "pk": 10,
+    "fields": {
+        "event_name": "Code training",
+        "event_date": "2024-10-12T10:50:32.399Z",
+        "description": "This is another aspect of code training",
+        "venue": 12,
+        "manager": [
+            1
+        ]
+    }
+}
+]
