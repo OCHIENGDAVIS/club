@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'events.apps.EventsConfig',
     'cbv.apps.CbvConfig',
     'accounts.apps.AccountsConfig',
+    'comments.apps.CommentsConfig',
 ]
 
 MIDDLEWARE = [

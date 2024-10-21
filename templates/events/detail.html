@@ -1,10 +1,48 @@
 {% extends 'base.html' %}
+{% load form_filters %}
 {% block title %} {{ event.event_name }} {% endblock %}
 
 {% block content %}
-    <h1>{{ event.event_name }}</h1>
-    <p>{{ event.event_date }}</p>
-    <p>{{ event.event_manager.username }}</p>
-    <p>{{ event.venue.name }} - {{ event.venue.address }}</p>
-    <a href="{% url 'events:add_venue' event.id %}">Add/Change Venue</a>
+    <h1 class="text-6xl font-bold mb-8">{{ event.event_name }} <small
+            class="text-sm text-red-500">{{ event.event_date }}
+        | {{ event.venue.name }} {{ event.venue.address }}</small>
+    </h1>
+    <p class="text-4xl">{{ event.description }}</p>
+    <p class="text-lg mt-2 mb-8">This event is going down on <span class="font-bold">{{ event.event_date }}</span>
+        at <span class="font-bold">{{ event.venue.address }} {{ event.venue.name }}</span></p>
+
+    {% if request.user.is_superuser %}
+        <a class="font-bold text-white px-4  py-1 rounded text-lg bg-red-500 hover:cursor-pointer hover:bg-red-700"
+           href="{% url 'events:add_venue' event.id %}">Add/Change Venue</a>
+    {% endif %}
+
+    <div class="mt-20">
+        <h2 class="text-2xl mb-2">Comments</h2>
+        <div>
+            <form method="POST" event.id %}
+            "> {% csrf_token %}
+            <div>
+                <p>{{ form.body|add_class:'py-0.5 px-2 w-1/2 h-1/2  rounded outline-0 ring-0 border border-gray-800 focus:border-gray-800 focus:outiline-0 focus:ring-0' }}</p>
+            </div>
+            <div>
+                <input class="font-bold text-white px-4 py-1 rounded  text-lg bg-red-500 hover:cursor-pointer hover:bg-red-700"
+                       type="submit" value="send"/>
+            </div>
+            </form>
+
+        </div>
+        {% for comment in event.comments.all %}
+
+            <div class="w-1/2 border-b-2 py-2 border-stone-400">
+                <div class="flex py-2 align-center justify-between">
+                    <p class="font-bold text-red-500">{{ comment.user.username }}</p>
+                    <p class="font-bold text-red-500">{{ comment.created }}</p>
+                </div>
+                <p>
+                    {{ comment.body }}
+                </p>
+            </div>
+        {% endfor %}
+
+    </div>
 {% endblock %}

@@ -10,6 +10,7 @@ from club.contact import ContactForm
 
 from events.models import Event
 from events.forms import EventForm
+from comments.forms import CommentForm
 
 
 class TemplateViewDemo(TemplateView):
@@ -31,6 +32,11 @@ class EventDetail(LoginRequiredMixin, DetailView):
     model = Event
     template_name = 'cbv/detail.html'
     context_object_name = 'event'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = CommentForm()
+        return context
 
 
 class EventCreateView(LoginRequiredMixin, CreateView):

@@ -17,17 +17,19 @@
                    href="{% url 'events:index' %}">Home</a>
 
 
-                <a class="font-bold font-black text-lg hover:text-red-500" href="{% url 'contact_us' %}">Contact Us
-                    events</a>
+                <a class="font-bold font-black text-lg hover:text-red-500" href="{% url 'contact_us' %}">Contact Us</a>
             </div>
             <div class="flex gap-8 align-center">
+                <a class="font-bold  text-lg hover:cursor-pointer hover:text-red-500"
+                   href="{% url 'cbv:list' %}">All events</a>
+
                 {% if request.user.is_authenticated %}
 
                     <form action="{% url 'logout' %}" method="POST">
                         {% csrf_token %}
                         {{ form.asp }}
                         <p>
-                            <input class="font-bold  text-lg text-red-500 hover:cursor-pointer hover:text-black"
+                            <input class="font-bold  text-lg hover:cursor-pointer hover:text-red-500"
                                    type="submit"
                                    value="Logout">
                         </p>
@@ -36,11 +38,11 @@
 
                 {% else %}
 
-                    <a class="font-bold  text-lg text-red-500 hover:cursor-pointer hover:text-black"
+                    <a class="font-bold  text-lg hover:cursor-pointer hover:text-red-500"
                        href="{% url 'login' %}">Login</a>
 
 
-                    <a class="font-bold  text-lg text-red-500 hover:cursor-pointer hover:text-black"
+                    <a class="font-bold  text-lg hover:cursor-pointer hover:text-red-500"
                        href="{% url 'accounts:register' %}">Register</a>
                 {% endif %}
             </div>
@@ -54,13 +56,10 @@
     <div class="">
         <div class="mt-10">
             {% if request.user.is_authenticated %}
-                <h1 class="text-4xl text-red-500 font-bold mb-10 border-b-4 border-stone-400 pb-3 ">
+                <h1 class="text-4xl text-red-500 font-bold mb-10 border-b-2 border-stone-400 pb-3 ">
                     Welcome, {{ request.user.username }}</h1>
             {% else %}
-                <h1 class="text-md mb-4 text-black-500 font-bold py-3 ">You are not logged in, please <small><a
-                        class="text-red-500" href="{% url 'login' %}">Login</a></small> OR <small><a
-                        class="text-red-500"
-                        href="{% url 'accounts:register' %}">Register</a></small>
+                <h1 class="text-md mb-4 text-black-500 font-bold py-3 ">You are not logged in
                 </h1>
             {% endif %}
         </div>

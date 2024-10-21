@@ -26,6 +26,7 @@ from formtools.wizard.views import SessionWizardView
 
 from .models import Event, Venue
 from .forms import VenueForm, CommitteeForm, SurveyForm1, SurveyForm2
+from comments.forms import CommentForm
 
 
 def index(request, year=date.today().year, month=date.today().month):
@@ -47,9 +48,19 @@ def all_events(request):
     return render(request, 'events/list.html', {'events': events})
 
 
+@login_required()
 def event_detail(request, id):
     event = get_object_or_404(Event, id=id)
-    return render(request, 'events/detail.html', {'event': event})
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.event = event
+            comment.user = request.user
+            comment.save()
+            return HttpResponseRedirect(reverse('events:detail', args=[id]))
+    form = CommentForm()
+    return render(request, 'events/detail.html', {'event': event, 'form': form})
 
 
 @login_required()
