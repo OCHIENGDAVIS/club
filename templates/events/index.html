@@ -1,15 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load form_filters %}
 
 {% block title %} Index {% endblock %}
 {% block content %}
 
 
 
-    <h1>{{ title }}</h1>
-    <img class="w-1/4 h-1/6" src="{% static 'imgs/events.jpg' %}" alt="events table">
-    <p>
-        {% autoescape off %} {{ cal }} {% endautoescape %}
-    </p>
+    <h1 class="text-2xl mb-16"> {{ title }} </h1>
+    <img class="w-full max-h-96 object-cover" src="{% static 'imgs/events.jpg' %}" alt="events table">
+    <div class="mt-10">
+        <p class="p-4">
+            {% autoescape off %} {{ cal }} {% endautoescape %}
+        </p>
+    </div>
 
+
+{% endblock %}
+
+{% block domready %}
+    <script src="{% static 'js/htmlcalender.js' %}"></script>
 {% endblock %}

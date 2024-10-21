@@ -8,38 +8,21 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-200">
-<div class="max-w-6xl mx-auto px-4">
+<div class="bg-white">
+    <nav class="max-w-7xl mx-auto">
+        <div class="flex justify-between py-4">
 
-    <nav class="px-8  bg-white">
-        <ul class="flex justify-between py-4">
-
-            <li class=" ">
+            <div class="flex gap-8 align-center">
                 <a class="font-bold font-black text-lg hover:text-red-500 active:text-red-500"
                    href="{% url 'events:index' %}">Home</a>
-            </li>
-            {% if request.user.is_authenticated %}
-                <li>
-                    <a class="font-bold font-black text-lg hover:text-red-500" href="{% url 'events:all_events' %}">all
-                        events</a>
-                </li>
-                <li>
-                    <a class="font-bold font-black text-lg hover:text-red-500"
-                       href="{% url 'events:generate_text_file' %}">Generate
-                        text file</a>
-                </li>
-                <li>
-                    <a class="font-bold font-black text-lg hover:text-red-500" href="{% url 'events:generate_csv' %}">Generate
-                        csv file</a>
-                </li>
-                <li>
-                    <a class="font-bold font-black text-lg hover:text-red-500" href="{% url 'events:generate_pdf' %}">Generate
-                        pdf file</a>
-                </li>
-                <li>
-                    <a class="font-bold font-black text-lg hover:text-red-500" href="{% url 'cbv:list' %}">Class Based
-                        Views</a>
-                </li>
-                <li>
+
+
+                <a class="font-bold font-black text-lg hover:text-red-500" href="{% url 'contact_us' %}">Contact Us
+                    events</a>
+            </div>
+            <div class="flex gap-8 align-center">
+                {% if request.user.is_authenticated %}
+
                     <form action="{% url 'logout' %}" method="POST">
                         {% csrf_token %}
                         {{ form.asp }}
@@ -50,39 +33,49 @@
                         </p>
                     </form>
 
-                </li>
-            {% else %}
 
-                <li>
-                    <a class="font-bold font-black text-lg hover:text-red-500" href="{% url 'events:all_events' %}">All
-                        events</a>
-                </li>
-                <li>
+                {% else %}
+
                     <a class="font-bold  text-lg text-red-500 hover:cursor-pointer hover:text-black"
                        href="{% url 'login' %}">Login</a>
-                </li>
-                <li>
+
+
                     <a class="font-bold  text-lg text-red-500 hover:cursor-pointer hover:text-black"
                        href="{% url 'accounts:register' %}">Register</a>
-                </li>
-            {% endif %}
-        </ul>
-        {% if request.user.is_authenticated %}
-            <h1 class="text-4xl text-red-500 font-bold ">Welcome, {{ request.user.username }}</h1>
-        {% else %}
-            <h1 class="text-md mb-4 text-black-500 font-bold py-3 ">You are not logged in, please <small><a
-                    class="text-red-500" href="{% url 'login' %}">Login</a></small> OR <small><a class="text-red-500"
-                                                                                                 href="{% url 'accounts:register' %}">Register</a></small>
-            </h1>
-        {% endif %}
+                {% endif %}
+            </div>
+        </div>
 
     </nav>
-    <div class="px-8">
+</div>
+
+
+<div class="max-w-6xl mx-auto px-4">
+    <div class="">
+        <div class="mt-10">
+            {% if request.user.is_authenticated %}
+                <h1 class="text-4xl text-red-500 font-bold mb-10 border-b-4 border-stone-400 pb-3 ">
+                    Welcome, {{ request.user.username }}</h1>
+            {% else %}
+                <h1 class="text-md mb-4 text-black-500 font-bold py-3 ">You are not logged in, please <small><a
+                        class="text-red-500" href="{% url 'login' %}">Login</a></small> OR <small><a
+                        class="text-red-500"
+                        href="{% url 'accounts:register' %}">Register</a></small>
+                </h1>
+            {% endif %}
+        </div>
+        <div>
+        </div>
         {% block content %}
 
         {% endblock %}
-    </div>
+        <div>
 
+        </div>
+
+    </div>
+    {% block domready %}
+    {% endblock %}
 </body>
-</div>
+
 </html>
